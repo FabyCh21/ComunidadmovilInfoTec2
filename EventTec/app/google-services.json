@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "649245158442",
+    "firebase_url": "https://infotec-61239.firebaseio.com",
+    "project_id": "infotec-61239",
+    "storage_bucket": "infotec-61239.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649245158442:android:a5280858ede7111d",
+        "android_client_info": {
+          "package_name": "com.example.jimmy.eventtec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649245158442-f8ioj2fcf6383afjjgmaervqbu14a729.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNfdkwHlq0A7qOKgFszZh0EOgcAEf8_Qg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
