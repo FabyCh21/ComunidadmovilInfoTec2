@@ -1,4 +1,5 @@
 package com.example.jimmy.eventtec;
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -51,7 +52,7 @@ public class CustomService extends Service {
 
         if(!cent)
             myTask.execute();
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY ;//super.onStartCommand(intent, flags, startId);
     }
 
     @Override
@@ -67,6 +68,14 @@ public class CustomService extends Service {
     public IBinder onBind(Intent intent) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        Intent restartServiceTask = new Intent(getApplicationContext(),this.getClass());
+        restartServiceTask.setPackage(getPackageName());
+        super.onTaskRemoved(rootIntent);
+    }
+
     private class MyTask extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -156,7 +165,6 @@ public class CustomService extends Service {
 
             @Override
             public void onFailure(Throwable t) {
-
             }
         });
 

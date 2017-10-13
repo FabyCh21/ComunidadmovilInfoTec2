@@ -3,7 +3,6 @@ package com.example.jimmy.eventtec;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 /**
  * Created by Jimmy on 12/05/2016.
