@@ -15,4 +15,5 @@ public class StartMyServiceAtBootReceiver extends BroadcastReceiver {
 
         context.startService(new Intent(context, CustomService.class));
     }
+
 }

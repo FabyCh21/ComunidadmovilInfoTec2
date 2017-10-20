@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
@@ -37,31 +38,25 @@ import retrofit.Retrofit;
 public class CustomService extends Service {
     MyTask myTask;
     int numeroMensajes=0;
-    private boolean cent;
     @Override
     public void onCreate() {
         super.onCreate();
 
             myTask = new MyTask();
-            cent=false;
 
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        if(!cent)
-            myTask.execute();
-        return START_STICKY ;//super.onStartCommand(intent, flags, startId);
+        myTask.execute();
+        return START_STICKY ;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(cent) {
-
-            myTask.cancel(true);
-        }
+        startService(new Intent(getApplicationContext(), this.getClass()));
     }
 
     @Override
@@ -73,6 +68,7 @@ public class CustomService extends Service {
     public void onTaskRemoved(Intent rootIntent) {
         Intent restartServiceTask = new Intent(getApplicationContext(),this.getClass());
         restartServiceTask.setPackage(getPackageName());
+        sendBroadcast(restartServiceTask);
         super.onTaskRemoved(rootIntent);
     }
 
@@ -80,20 +76,19 @@ public class CustomService extends Service {
 
         @Override
         protected String doInBackground(String... params) {
-            if (cent){
+
                 try {
                     pushNotificationStar(getApplicationContext());
                 } catch (Exception e) {
 
                 }
-            }
+
             return null;
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            cent = true;
         }
 
         @Override
@@ -104,7 +99,6 @@ public class CustomService extends Service {
         @Override
         protected void onCancelled() {
             super.onCancelled();
-            cent = false;
         }
     }
 

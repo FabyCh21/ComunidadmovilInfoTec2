@@ -152,8 +152,10 @@ public class MainEventos extends AppCompatActivity {
         return canvasBitmap;
     }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     void mostrarImagen(Bitmap img,String name){
         ImageView image = new ImageView(this);
@@ -197,12 +199,15 @@ public class MainEventos extends AppCompatActivity {
             if(pref.getString("ID","")!="" &&pref.getString("PASS","")!=""){
                 My_id =pref.getString("ID","");
 
-                if(StartMyServiceAtBootReceiver.runing==false){// corre el proceso en segundo plano si no esta corriendo
+                if(StartMyServiceAtBootReceiver.runing==false){// corre el proceso en segundo plano si no esta corriendoz
 
                     StartMyServiceAtBootReceiver.runing=true;
-                    Intent n= new Intent(this,StartMyServiceAtBootReceiver.class);
-                    sendBroadcast(n);
+                    startService(new Intent(getApplicationContext(), CustomService.class));
                 }
+
+
+
+
 
                 Firebase.setAndroidContext(this);
                 Firebase myFirebaseRef = new Firebase("https://infotec-61239.firebaseio.com/");
