@@ -56,28 +56,23 @@ public class EventoView extends AppCompatActivity {
     Eventos event;
     Bitmap imagen;
     ServerAPI service;
-    //WebView webView;
+    WebView webView;
     String webPage_es;
-    TextView descripcion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evento_view);
 
         event = (Eventos)getIntent().getSerializableExtra("evento");
-        //webView  = (WebView) findViewById(R.id.webview);
-        //webView.getSettings().setJavaScriptEnabled(true);
-        //webView.setWebChromeClient(new WebChromeClient());
+        webView  = (WebView) findViewById(R.id.webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebChromeClient(new WebChromeClient());
         String texto = event.getDescripcion();
         String webPage_es = "<html><body><div style=text-align:justify> "+texto+" </div></body></html>";
-        descripcion = (TextView) findViewById(R.id.descripcion);
-        descripcion.setText(Html.fromHtml(webPage_es));
 
-
-
-        //webView.loadData(webPage_es,"text/html", "utf-8");
-        //webView.clearCache(true);
-        //webView.clearHistory();
+        webView.loadData(webPage_es,"text/html", "utf-8");
+        webView.clearCache(true);
+        webView.clearHistory();
 
 
         TextView titulo = (TextView) findViewById(R.id.titulo);
