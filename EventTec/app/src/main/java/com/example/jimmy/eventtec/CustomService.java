@@ -56,7 +56,7 @@ public class CustomService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        startService(new Intent(getApplicationContext(), this.getClass()));
+        //startService(new Intent(getApplicationContext(), this.getClass()));
     }
 
     @Override
@@ -68,7 +68,6 @@ public class CustomService extends Service {
     public void onTaskRemoved(Intent rootIntent) {
         Intent restartServiceTask = new Intent(getApplicationContext(),this.getClass());
         restartServiceTask.setPackage(getPackageName());
-        sendBroadcast(restartServiceTask);
         super.onTaskRemoved(rootIntent);
     }
 

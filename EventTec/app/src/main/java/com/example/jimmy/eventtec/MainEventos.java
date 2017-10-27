@@ -155,6 +155,7 @@ public class MainEventos extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
     }
 
     void mostrarImagen(Bitmap img,String name){
