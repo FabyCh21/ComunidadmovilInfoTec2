@@ -155,6 +155,7 @@ public class MainEventos extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
     }
 
     void mostrarImagen(Bitmap img,String name){
@@ -202,7 +203,8 @@ public class MainEventos extends AppCompatActivity {
                 if(StartMyServiceAtBootReceiver.runing==false){// corre el proceso en segundo plano si no esta corriendoz
 
                     StartMyServiceAtBootReceiver.runing=true;
-                    startService(new Intent(getApplicationContext(), CustomService.class));
+                    Intent intent = new Intent(this,CustomService.class);
+                    startService(intent);
                 }
 
 

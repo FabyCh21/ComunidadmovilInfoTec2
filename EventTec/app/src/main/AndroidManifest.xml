@@ -42,6 +42,7 @@
         </receiver>
 
         <activity
+            android:launchMode="singleTop"
             android:name=".MainEventos"
             android:label="@string/title_activity_main_eventos"
             android:configChanges="orientation"
