@@ -13,7 +13,6 @@
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:id="@+id/linearLayout2">
-
         <TextView
             android:textSize="20dp"
             android:layout_width="wrap_content"
@@ -29,6 +28,14 @@
             android:layout_centerHorizontal="true"
             android:textAllCaps="true"
             />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/delete"
+            android:background="@drawable/roundbutton"
+            android:id="@+id/Eliminar_button"
+            android:layout_marginLeft="20dp"
+            android:onClick="borrar"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -50,26 +57,22 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="200dp"
                     android:id="@+id/img"/>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal">
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:background="@color/azulTec">
                     <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/date"
-                        android:layout_marginLeft="15dip"
-                        android:gravity="center"
-                        />
-                    <TextView
-                        android:paddingRight="20dp"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:text="Fecha del evento"
                         android:id="@+id/hora"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textAlignment="center"/>
 
                 </LinearLayout>
                 <ScrollView
@@ -93,15 +96,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/trash"
-        android:id="@+id/Eliminar_button"
-        android:onClick="borrar"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" />
+
 </RelativeLayout>

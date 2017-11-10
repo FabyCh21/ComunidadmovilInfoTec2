@@ -26,6 +26,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -58,6 +59,7 @@ public class EventoView extends AppCompatActivity {
     ServerAPI service;
     WebView webView;
     String webPage_es;
+    TextView titulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,10 +77,10 @@ public class EventoView extends AppCompatActivity {
         webView.clearHistory();
 
 
-        TextView titulo = (TextView) findViewById(R.id.titulo);
+        titulo = (TextView) findViewById(R.id.titulo);
         TextView fecha = (TextView) findViewById(R.id.hora);
         ImageView img = (ImageView) findViewById(R.id.img);
-        Button ButtonEliminarMensaje = (Button) findViewById(R.id.Eliminar_button);
+        ImageButton ButtonEliminarMensaje = (ImageButton) findViewById(R.id.Eliminar_button);
 
         if(event.borrable.equals("false")){
             ButtonEliminarMensaje.setVisibility(View.INVISIBLE);
@@ -144,8 +146,8 @@ public class EventoView extends AppCompatActivity {
     public void borrar(View view){
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle( Html.fromHtml("<font color='#42dfff'>Borrar Mensaje</font>"))
-                .setMessage("¿Esta suguro que desea borrar este mensaje")
+                .setTitle( Html.fromHtml("<font color='#42dfff'>" + event.getTitulo() + "</font>"))
+                .setMessage("¿Esta seguro de  borrar el evento " + event.getTitulo() + "?")
 
                 .setPositiveButton("Si", new DialogInterface.OnClickListener()
                 {

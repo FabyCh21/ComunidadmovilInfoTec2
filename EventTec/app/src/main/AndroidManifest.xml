@@ -43,7 +43,9 @@
 
         <activity
             android:name=".MainEventos"
-            android:label="@string/title_activity_main_eventos">
+            android:label="@string/title_activity_main_eventos"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,7 +54,9 @@
         </activity>
         <activity
             android:name=".EventoView"
-            android:label="@string/title_activity_evento_view">
+            android:label="@string/title_activity_evento_view"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
 
         </activity>
 

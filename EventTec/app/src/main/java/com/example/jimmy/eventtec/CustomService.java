@@ -43,7 +43,6 @@ public class CustomService extends Service {
         super.onCreate();
 
             myTask = new MyTask();
-
     }
 
     @Override
@@ -172,8 +171,8 @@ public class CustomService extends Service {
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(thi)
-                        .setSmallIcon(android.R.drawable.ic_dialog_email)
-                        .setLargeIcon(BitmapFactory.decodeResource(thi.getResources(), R.drawable.in))
+                        .setSmallIcon(R.drawable.logo3)
+                        .setLargeIcon(BitmapFactory.decodeResource(thi.getResources(), R.drawable.logo1))
                         .setContentTitle("Tec Informa.")
                         .setContentText("Tienes "+num+" mensajes sin leer")
                         .setContentInfo("")
