@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:id="@+id/ID_ET"
-            android:inputType="number"
+            android:inputType="text"
             android:gravity="center"
             android:textSize="20dp"
             />

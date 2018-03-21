@@ -4,17 +4,17 @@ package com.example.jimmy.eventtec.DTO;
  * Created by Josue on 6/4/2017.
  */
 public class Departamento {
-    private String nombre;
+    private String codigoDep;
 
     public Departamento(String nombre) {
-        this.nombre = nombre;
+        this.codigoDep = nombre;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getCodigoDep() {
+        return codigoDep;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCodigoDep(String codigoDep) {
+        this.codigoDep = codigoDep;
     }
 }

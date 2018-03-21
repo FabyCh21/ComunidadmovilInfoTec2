@@ -227,7 +227,7 @@ public class MainEventos extends AppCompatActivity {
                             }
                         }
                         catch (Exception e){
-
+                            Toast.makeText(MainEventos.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                     @Override

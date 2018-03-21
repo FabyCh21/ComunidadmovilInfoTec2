@@ -107,7 +107,7 @@ public class CustomService extends Service {
 
 
         Firebase.setAndroidContext(context);
-        Firebase myFirebaseRef = new Firebase("https://infotec-61239.firebaseio.com/");
+        Firebase myFirebaseRef = new Firebase("https://infotec-d1598.firebaseio.com/");
 
         myFirebaseRef.child("departamentos/"+pref.getString("DEPA","")).addValueEventListener(new ValueEventListener() {
             @Override
