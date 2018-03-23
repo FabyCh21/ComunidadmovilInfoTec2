@@ -222,12 +222,11 @@ public class MainEventos extends AppCompatActivity {
                     public void onResponse(Response<ArrayList<Departamento>> response, Retrofit retrofit){
                         try{
                             for(int i = 0; i < response.body().size(); i++){
-                                Departamento d = new Departamento(response.body().get(i).toString());
+                                Departamento d = new Departamento(response.body().get(i).getCodigoDep());
                                 listaDepartamentos.add(d);
                             }
                         }
                         catch (Exception e){
-                            Toast.makeText(MainEventos.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                     @Override
